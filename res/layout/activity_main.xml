@@ -8,19 +8,60 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="" />
+
 
     <SeekBar
         android:id="@+id/isoSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="31dp"
-        android:max="5" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:max="5"
+        android:paddingLeft="50dp" />
+
+    <TextView
+        android:id="@+id/isoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/isoSeekBar"
+        android:layout_alignBottom="@+id/isoSeekBar"/>
+
+    <SeekBar
+        android:id="@+id/shutterSpeedSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/isoSeekBar"
+        android:layout_below="@+id/isoSeekBar"
+        android:max="12"
+        android:paddingLeft="50dp" />
+
+     <TextView
+         android:id="@+id/shutterSpeedTextView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/shutterSpeedSeekBar"
+         android:layout_alignLeft="@+id/shutterSpeedSeekBar" />
+
+     <TextView
+         android:id="@+id/shutterSpeedLable"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignRight="@+id/shutterSpeedSeekBar"
+         android:layout_alignTop="@+id/shutterSpeedSeekBar"
+         android:ems="10"
+         android:text="Shutter Speed"
+         android:textSize="15sp" />
+
+     <TextView
+         android:id="@+id/isoLabel"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/shutterSpeedLable"
+         android:layout_alignTop="@+id/isoSeekBar"
+         android:ems="10"
+         android:text="ISO"
+         android:textSize="15sp"
+         android:typeface="normal" />
 
 </RelativeLayout>
