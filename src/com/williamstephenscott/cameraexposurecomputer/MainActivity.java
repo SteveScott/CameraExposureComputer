@@ -15,7 +15,8 @@ public class MainActivity extends Activity {
 	
 	private float shutterSpeedValue;
 	private String shutterSpeedString;
-	private String[] shutterSpeedOptions = new String[] {
+	private String[] shutterSpeedOptions = new String[] 
+			{
 			"4",
 			"2",
 			"1",
@@ -31,6 +32,21 @@ public class MainActivity extends Activity {
 			"1/1000"
 			};
 	
+	private float fstopValue;
+	private float[] fstopOptions = new float[]
+			{
+				2f,
+				2.8f,
+				4f,
+				5.6f,
+				8f,
+				11f,
+				16f,
+				22f,
+				32f,
+				45f,
+				64f
+			};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -67,9 +83,10 @@ public class MainActivity extends Activity {
 			isoValueText.setText("" + isoValue );
 			}
 		});
-	//create shutterSpeedSeekbar and listen to it
+	//create shutterSpeedSeekBar and listen to it
 		SeekBar shutterSpeedSeekBar = (SeekBar) findViewById(R.id.shutterSpeedSeekBar);
-		shutterSpeedSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+		shutterSpeedSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() 
+		{
 			
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
@@ -106,28 +123,41 @@ public class MainActivity extends Activity {
 				
 				shutterSpeedString = shutterSpeedOptions[progress];
 				shutterSpeedValue = shutterSpeedFloats[progress]; 
-				
-				//convert strings to floats
-				/*if (shutterSpeedString == "4")
-					{
-						shutterSpeedValue = 4.0f ;
-					}
-				
-				if (shutterSpeedString == "2")
-					{
-						shutterSpeedValue = 2.0f;
-					}
-				
-				if (shutterSpeedString == "1")
-				 	{
-						shutterSpeedValue = 2.0f;
-				 	}
-				 	*/
+			
 				//refresh
 				TextView shutterSpeedValueText = (TextView) findViewById(R.id.shutterSpeedTextView);
 				shutterSpeedValueText.setText(shutterSpeedString);
 				
 			
+			}
+			
+		});
+	
+	//create fstopSeekBar
+		SeekBar fstopSeekBar = (SeekBar) findViewById(R.id.fstopSeekBar);
+		fstopSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() 
+		
+		{
+			
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress,
+					boolean fromUser) 
+			{
+			fstopValue = fstopOptions[progress];
+			TextView fstopTextView = (TextView) findViewById(R.id.fstopTextView);
+			fstopTextView.setText("" + fstopValue);
 			}
 		});
 	}
