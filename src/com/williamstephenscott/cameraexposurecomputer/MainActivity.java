@@ -48,6 +48,31 @@ public class MainActivity extends Activity {
 				64f
 			};
 	
+	private int evValue;
+	private String evString;
+	private String[] evOptions = new String[]
+			{
+			"-2 - Full moonlight",
+			"-1",
+			"0",
+			"1",
+			"2 - distant lit buildings",
+			"3",
+			"4 - Christmas Tree Lights, floodlights",
+			"5 - Night traffic",
+			"6 - Indoor Party",
+			"7 - Amusement parks, offices",
+			"8 - Flourescent lighting, streetlights, circus",
+			"9 - Neon and signage, stage shows",
+			"10 - After sunset",
+			"11 - Shady",
+			"12 - Overcast, at sunset",
+			"13 - Cloudy",
+			"14 - Hazy",
+			"15 - Sunny",
+			"16 - Sand and Snow"
+			};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -158,7 +183,38 @@ public class MainActivity extends Activity {
 			fstopValue = fstopOptions[progress];
 			TextView fstopTextView = (TextView) findViewById(R.id.fstopTextView);
 			fstopTextView.setText("" + fstopValue);
+			
 			}
+		});
+	
+	//create evSeekBar
+		SeekBar evSeekBar = (SeekBar) findViewById(R.id.evSeekBar);
+		evSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener()
+		{
+			
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress,
+					boolean fromUser) 
+			{
+				evString = evOptions[progress];
+				evValue = (progress - 2);
+				TextView evTextView = (TextView) findViewById(R.id.evTextView);
+				evTextView.setText(evString);
+			}
+			
+			
 		});
 	}
 	

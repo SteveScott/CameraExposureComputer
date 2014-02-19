@@ -7,18 +7,48 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
+ ///EV  
 
-
+     
+     <SeekBar
+         android:id="@+id/evSeekBar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/isoSeekBar"
+         android:layout_alignLeft="@+id/isoSeekBar"
+         android:layout_marginBottom="30dp"
+         android:max="18" />
+       
+      <TextView
+         android:id="@+id/evTextView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/evSeekBar"
+         android:layout_alignLeft="@+id/evSeekBar"
+         android:layout_marginBottom="15dp" />
+      	
 ///ISO
-    <SeekBar
-        android:id="@+id/isoSeekBar"
-        android:layout_width="match_parent"
+    
+     <SeekBar
+         android:id="@+id/isoSeekBar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/fstopTextView"
+         android:layout_alignParentTop="true"
+         android:layout_marginTop="100dp"
+         android:max="5"
+         android:paddingLeft="50dp" />
+     
+    <TextView
+        android:id="@+id/isoLabel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
-        android:max="5"
-        android:paddingLeft="50dp" />
+        android:layout_alignRight="@+id/isoSeekBar"
+        android:layout_alignTop="@+id/isoSeekBar"
+        android:ems="10"
+        android:text="ISO"
+        android:textSize="15sp"
+        android:typeface="normal" />
 
     <TextView
         android:id="@+id/isoTextView"
@@ -38,7 +68,7 @@
         android:max="12"
         android:paddingLeft="50dp" />
     
- <TextView
+	<TextView
          android:id="@+id/shutterSpeedLabel"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -83,15 +113,6 @@
          android:layout_alignBottom="@+id/fstopSeekBar"
          android:layout_alignLeft="@+id/fstopSeekBar"/>
 
-     <TextView
-         android:id="@+id/isoLabel"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignRight="@+id/isoSeekBar"
-         android:layout_alignTop="@+id/isoSeekBar"
-         android:ems="10"
-         android:text="ISO"
-         android:textSize="15sp"
-         android:typeface="normal" />
+   
 
 </RelativeLayout>
