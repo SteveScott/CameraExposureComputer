@@ -9,7 +9,7 @@
     tools:context=".MainActivity" >
 
 
-
+///ISO
     <SeekBar
         android:id="@+id/isoSeekBar"
         android:layout_width="match_parent"
@@ -27,6 +27,8 @@
         android:layout_alignLeft="@+id/isoSeekBar"
         android:layout_alignBottom="@+id/isoSeekBar"/>
 
+///Shutter Speed
+   
     <SeekBar
         android:id="@+id/shutterSpeedSeekBar"
         android:layout_width="match_parent"
@@ -35,16 +37,9 @@
         android:layout_below="@+id/isoSeekBar"
         android:max="12"
         android:paddingLeft="50dp" />
-
-     <TextView
-         android:id="@+id/shutterSpeedTextView"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignBottom="@+id/shutterSpeedSeekBar"
-         android:layout_alignLeft="@+id/shutterSpeedSeekBar" />
-
-     <TextView
-         android:id="@+id/shutterSpeedLable"
+    
+ <TextView
+         android:id="@+id/shutterSpeedLabel"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_alignRight="@+id/shutterSpeedSeekBar"
@@ -52,12 +47,47 @@
          android:ems="10"
          android:text="Shutter Speed"
          android:textSize="15sp" />
+ 
+     <TextView
+         android:id="@+id/shutterSpeedTextView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/shutterSpeedSeekBar"
+         android:layout_alignLeft="@+id/shutterSpeedSeekBar" />
+
+///F-stop    
+ 
+     <SeekBar
+         android:id="@+id/fstopSeekBar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_below="@+id/shutterSpeedSeekBar"
+         android:max="10"
+         android:paddingLeft="50dp" />
+
+     <TextView
+         android:id="@+id/fstopLabel"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignRight="@+id/fstopSeekBar"
+         android:layout_alignTop="@+id/fstopSeekBar"
+         android:ems="10"
+         android:text="F-stop"
+         android:textSize="15sp" />
+     
+     <TextView 
+         android:id="@+id/fstopTextView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignBottom="@+id/fstopSeekBar"
+         android:layout_alignLeft="@+id/fstopSeekBar"/>
 
      <TextView
          android:id="@+id/isoLabel"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/shutterSpeedLable"
+         android:layout_alignRight="@+id/isoSeekBar"
          android:layout_alignTop="@+id/isoSeekBar"
          android:ems="10"
          android:text="ISO"
