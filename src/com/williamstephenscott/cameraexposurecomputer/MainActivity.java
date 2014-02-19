@@ -31,6 +31,30 @@ public class MainActivity extends Activity {
 			"1/500",
 			"1/1000"
 			};
+	private String evString;
+	private int evValue;
+	private String[] evOptions = new String[]
+			{
+			"-2 - Full moonlight",
+			"-1",
+			"0",
+			"1",
+			"2 - distant lit buildings",
+			"3",
+			"4 - Christmas Tree Lights, floodlights",
+			"5 - Night traffic",
+			"6 - Indoor Party",
+			"7 - Amusement parks, offices",
+			"8 - Flourescent lighting, streetlights, circus",
+			"9 - Neon and signage, stage shows",
+			"10 - After sunset",
+			"11 - Shady",
+			"12 - Overcast, at sunset",
+			"13 - Cloudy",
+			"14 - Hazy",
+			"15 - Sunny",
+			"16 - Sand and Snow"
+			};
 	
 	private float fstopValue;
 	private float[] fstopOptions = new float[]
@@ -159,6 +183,34 @@ public class MainActivity extends Activity {
 			TextView fstopTextView = (TextView) findViewById(R.id.fstopTextView);
 			fstopTextView.setText("" + fstopValue);
 			}
+		});
+	//create ev SeekBar
+		SeekBar evSeekBar = (SeekBar) findViewById(R.id.evSeekBar);
+		evSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener()
+		{
+
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) 
+			{
+			evString = evOptions[progress];
+			evValue = (progress - 2);	
+			TextView evValueText = (TextView) findViewById(R.id.evTextView);
+			evValueText.setText(evString);
+			
+			};
+
+			@Override
+			public void onStartTrackingTouch(SeekBar arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onStopTrackingTouch(SeekBar arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
 		});
 	}
 	
