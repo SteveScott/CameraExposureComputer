@@ -10,7 +10,17 @@
 
 ///ISO
     
-
+     <SeekBar
+         android:id="@+id/isoSeekBar"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/evSeekBar"
+         android:layout_alignRight="@+id/fstopSeekBar"
+         android:layout_alignTop="@+id/evSeekBar"
+         android:layout_marginTop="40dp"
+         android:max="5"
+         android:paddingLeft="50dp" />
+     
     <TextView
         android:id="@+id/isoTextView"
         android:layout_width="wrap_content"
@@ -85,16 +95,7 @@
          android:textSize="15sp"
          android:typeface="normal" />
 
-     <SeekBar
-         android:id="@+id/isoSeekBar"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/evSeekBar"
-         android:layout_alignRight="@+id/fstopSeekBar"
-         android:layout_alignTop="@+id/evSeekBar"
-         android:layout_marginTop="40dp"
-         android:max="5"
-         android:paddingLeft="50dp" />
+///EV
 
      <SeekBar
          android:id="@+id/evSeekBar"
@@ -103,7 +104,7 @@
          android:layout_alignLeft="@+id/fstopTextView"
          android:layout_alignParentRight="true"
          android:layout_alignParentTop="true"
-         android:layout_marginTop="42dp"
+         android:layout_marginTop="55dp"
          android:max="18" />
      
       <TextView
@@ -113,5 +114,15 @@
         android:layout_alignBottom="@+id/evSeekBar"
         android:paddingBottom="40dp"
      	android:layout_centerHorizontal="true"/>
+      
+//Exposure
+	
+	<TextView
+	    android:id="@+id/exposureTextView"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true"
+	    android:textSize="50dp" />
 
 </RelativeLayout>
